@@ -10,7 +10,7 @@
 				<label for="sex">英雄性别</label>
 				<input v-model="formData.gender" type="text" class="form-control" id="sex" placeholder="英雄性别">
 			</div>
-			<button @click.prevent="handleEdit" type="submit" class="btn btn-success">Submit</button>
+			<button  @click.prevent="handleEdit" type="submit" class="btn btn-success">Submit</button>
 		</form>
 	</div>
 </template>
@@ -33,10 +33,11 @@
 			//根据id请求，添加英雄
 //			axios.get('http://127.0.0.1:3000/heroes/' + this.id)
 			axios
-			   .get(`http://127.0.0.1:3000/heroes/$(this.id)`)
+			   .get(`http://127.0.0.1:3000/heroes/${this.id}`)
 			   .then((response) => {
 			   	if(response.status === 200) {
-			   		this.FormData = response.data;
+			   		console.log(response.data)
+			   		this.formData = response.data;
 			   	}
 			   })
 			   .catch((err) => {

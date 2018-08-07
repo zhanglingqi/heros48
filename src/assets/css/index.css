@@ -9,7 +9,9 @@ body {
   padding-top: 50px;
 }
 
-
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	line-height: 2.428571;
+}
 
 /*
  * Global add-ons
